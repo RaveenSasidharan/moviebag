@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="movieHolder"
+            type="com.example.tmdb.ui.home.MoviesAdapter.MovieHolder" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:onClick="@{() -> movieHolder.showDetails()}"
+        app:cardCornerRadius="28dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:paddingBottom="18dp"
+            android:background="#F8F9FB">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="106dp"
+                android:layout_height="127dp"
+                android:layout_margin="18dp"
+                app:cardCornerRadius="24dp"
+                android:id="@+id/thumbanail_card"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/group_80"
+                    android:id="@+id/movie_thumb_nail"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/movie_title"
+                tools:text="Wonder Woman"
+                android:textColor="#000000"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="35dp"
+                android:textSize="21sp"
+                android:fontFamily="@font/montserrat_semibold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/thumbanail_card"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/movie_lang"
+                tools:text="Wonder Woman"
+                android:textColor="#9E9CB1"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="5dp"
+                android:textSize="15sp"
+                android:fontFamily="@font/montserrat_medium"
+                app:layout_constraintTop_toBottomOf="@+id/movie_title"
+                app:layout_constraintStart_toEndOf="@+id/thumbanail_card"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/release_date"
+                tools:text="Wonder Woman"
+                android:textColor="#9E9CB1"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="5dp"
+                android:textSize="15sp"
+                android:fontFamily="@font/montserrat_semibold"
+                app:layout_constraintTop_toBottomOf="@+id/movie_lang"
+                app:layout_constraintStart_toEndOf="@+id/thumbanail_card"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rate_value"
+                tools:text="3.5"
+                android:textColor="#9E9CB1"
+                android:layout_marginEnd="18dp"
+                android:layout_margin="5dp"
+                android:textSize="15sp"
+                android:gravity="center_vertical"
+                android:fontFamily="@font/montserrat_semibold"
+                app:layout_constraintTop_toBottomOf="@+id/release_date"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <RatingBar
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="5dp"
+                android:id="@+id/movie_rating"
+                android:numStars="10"
+                style="?android:attr/ratingBarStyleSmall"
+                app:layout_constraintTop_toBottomOf="@+id/release_date"
+                app:layout_constraintStart_toEndOf="@+id/thumbanail_card"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
